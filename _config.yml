@@ -28,13 +28,14 @@ projects:
     projects:
     # - repo-name
 
-# social_media:
+social_media:
   # behance: your_username
   # dribbble: your_username
   # facebook: your_username
   # hackerrank: your_username
   # instagram: your_username
   # keybase: your_username
+  github: mustafasaber
   linkedin: Mostafa Saber
   # mastodon: your_username
   # medium: your_username
@@ -52,3 +53,5 @@ topics:
   - name: Helm
 
   - name: Docker
+    web_url: https://github.com/topics/docker
+    image_url: https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/docker/docker.png
