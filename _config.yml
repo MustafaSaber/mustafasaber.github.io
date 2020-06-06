@@ -1,5 +1,5 @@
-layout: sidebar
-style: light
+layout: stacked
+style: dark
 
 plugins:
   - jekyll-octicons
@@ -29,29 +29,30 @@ projects:
     # - repo-name
 
 social_media:
-  # behance: your_username
-  # dribbble: your_username
-  # facebook: your_username
-  # hackerrank: your_username
-  # instagram: your_username
-  # keybase: your_username
-  github: mustafasaber
   linkedin: mustafasaber
-  # mastodon: your_username
+  github: mustafasaber
+  facebook: mustafasabertalaat
+  # hackerrank: your_username
+  instagram: mustafasaber_
   # medium: your_username
   # stackoverflow: your_user_id
-  # telegram: your_username
-  # twitter: your_username
-  # unsplash: your_username
-  # vk: your_username
+  twitter: mostafasaber_
   website: http://msaber.dev
   # youtube: your_username
 
 topics:
   - name: Kubernetes
+    web_url: https://github.com/topics/kubernetes
+    image_url: https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/kubernetes/kubernetes.png
 
   - name: Helm
+    web_url: https://github.com/topics/helm
+    image_url: https://helm.sh/img/helm.svg
 
   - name: Docker
     web_url: https://github.com/topics/docker
     image_url: https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/docker/docker.png
+  
+  - name: GoLang
+    web_url: https://github.com/topics/go
+    image_url: https://raw.githubusercontent.com/docker-library/docs/01c12653951b2fe592c1f93a13b4e289ada0e3a1/golang/logo.png
