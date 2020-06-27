@@ -7,7 +7,22 @@
     {% assign sort_order = 'pushed_at' %}
   {% endif %}
 
-  {% if site.projects.exclude.archived && site.projects.exclude.forks %}
+  {% if site.projects.static %}
+  
+    {% assign custom_repo_1 = site.github.public_repositories | where:'html_url', "https://github.com/MustafaSaber/GhostWriter" %}
+    {% assign custom_repo_2 = site.github.public_repositories | where:'html_url', "https://github.com/MustafaSaber/Courses" %}
+    {% assign custom_repo_3 = site.github.public_repositories | where:'html_url', "https://github.com/MustafaSaber/NLP_Assignments" %}
+    {% assign custom_repo_4 = site.github.public_repositories | where:'html_url', "https://github.com/MustafaSaber/eCommerce_Application" %}
+    {% assign custom_repo_5 = site.github.public_repositories | where:'html_url', "https://github.com/MustafaSaber/Algorithms" %}
+    {% assign custom_repo_6 = site.github.public_repositories | where:'html_url', "https://github.com/MustafaSaber/Genetic-Algorithms" %}
+    {% assign custom_repo_7 = site.github.public_repositories | where:'html_url', "https://github.com/MustafaSaber/Compression_Algorithms" %}
+    {% assign custom_repo_8 = site.github.public_repositories | where:'html_url', "https://github.com/MustafaSaber/AssemblyCodes" %}
+
+    {% assign filtered_repos = custom_repo_1 | concat: custom_repo_2 | concat: custom_repo_3
+                            | concat: custom_repo_4 | concat: custom_repo_5 | concat: custom_repo_6
+                            | concat: custom_repo_7 | concat: custom_repo_8 %}
+
+  {% elsif site.projects.exclude.archived && site.projects.exclude.forks %}
     {% assign filtered_repos = site.github.public_repositories | where:'archived', false | where:'fork', false | sort: sort_order | reverse %}
   {% elsif site.projects.exclude.archived %}
     {% assign filtered_repos = site.github.public_repositories | where:'archived', false | sort: sort_order | reverse %}
