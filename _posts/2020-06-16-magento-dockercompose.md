@@ -38,9 +38,9 @@ First you will change the URLs from DB by
 
 ``` bash
 docker-compose exec mariadb mysql -u 'root'
-use bitname_magento;
+use bitnami_magento;
 update core_config_data set value="https://localhost:8443/" where path='web/secure/base_url';
-update core_config_data set value="https://localhost:8080/" where path='web/unsecure/base_url';
+update core_config_data set value="http://localhost:8080/" where path='web/unsecure/base_url';
 ```
 Then you will need to flush the cache via
 
