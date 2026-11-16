@@ -1,0 +1,16 @@
+baseURL = 'https://msaber.dev/'
+locale = 'en'
+title = 'Mustafa Saber'
+enableRobotsTXT = true
+summaryLength = 28
+[params]
+  description = 'Egyptian software engineer based in Berlin. Notes on Go, Kubernetes, and building reliable systems.'
+  github = 'https://github.com/mustafasaber'
+  linkedin = 'https://www.linkedin.com/in/mustafasaber/'
+  resume = 'https://raw.githubusercontent.com/MustafaSaber/resume/main/resume.pdf'
+[permalinks]
+  thoughts = '/thoughts/:slug/'
+[markup.highlight]
+  noClasses = false
+[outputs]
+  home = ['HTML', 'RSS']

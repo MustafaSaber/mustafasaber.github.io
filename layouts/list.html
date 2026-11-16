@@ -1,0 +1,7 @@
+{{ define "main" }}
+<section class="section wrap page-heading">
+  <h1>{{ .Title }}</h1>
+  {{ with .Content }}<div class="prose list-intro">{{ . }}</div>{{ end }}
+  <div class="article-list">{{ range .Pages.ByDate.Reverse }}{{ partial "article-row.html" . }}{{ end }}</div>
+</section>
+{{ end }}

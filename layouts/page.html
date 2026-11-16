@@ -1,0 +1,11 @@
+{{ define "main" }}
+<article class="section wrap article">
+  <a class="back-link" href="{{ if eq .Section "thoughts" }}{{ "thoughts/" | relURL }}{{ else }}{{ "" | relURL }}{{ end }}">← {{ if eq .Section "thoughts" }}All thoughts{{ else }}Home{{ end }}</a>
+  <header class="article-heading">
+    <h1>{{ .Title }}</h1>
+    {{ if eq .Section "thoughts" }}<p class="article-meta"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time> · {{ .ReadingTime }} min read</p>{{ end }}
+    {{ with .Description }}<p class="lede">{{ . }}</p>{{ end }}
+  </header>
+  <div class="prose">{{ .Content }}</div>
+</article>
+{{ end }}

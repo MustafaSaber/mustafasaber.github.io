@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ if not .IsHome }}{{ .Title }} · {{ end }}{{ site.Title }}</title>
+<meta name="description" content="{{ .Description | default site.Params.description }}">
+<link rel="canonical" href="{{ .Permalink }}"><meta name="theme-color" content="#0c3b2e">
+<meta property="og:title" content="{{ .Title }}"><meta property="og:description" content="{{ .Description | default site.Params.description }}"><meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}"><meta property="og:url" content="{{ .Permalink }}">
+<link rel="icon" href="{{ "images/mark.svg" | relURL }}" type="image/svg+xml">
+{{ $css := resources.Get "css/main.css" | minify | fingerprint }}<link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+<link rel="preload" href="{{ "fonts/IBMPlexMono-Regular.ttf" | relURL }}" as="font" type="font/ttf" crossorigin>
+{{ with .OutputFormats.Get "RSS" }}<link rel="alternate" type="application/rss+xml" href="{{ .RelPermalink }}" title="Mustafa Saber — Thoughts">{{ end }}
+<script>try{document.documentElement.dataset.theme=localStorage.getItem('theme')||'light'}catch(e){}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="header wrap"><a href="{{ "" | relURL }}" class="brand" aria-label="Mustafa Saber home"><span class="brand-mark">{{ partial "mark.html" . }}</span><span class="brand-names">{{ partial "wordmark.html" . }}<span class="brand-english">Mustafa Saber</span></span></a>
+<nav aria-label="Main navigation"><a href="{{ "thoughts/" | relURL }}"{{ if eq .Section "thoughts" }} aria-current="page"{{ end }}>Thoughts</a><a href="{{ site.Params.resume }}" target="_blank" rel="noopener noreferrer" aria-label="View resume (PDF, opens in a new tab)">Resume <span aria-hidden="true">↗</span></a><button class="theme-toggle" type="button" aria-label="Switch to dark theme" title="Switch theme"><span aria-hidden="true">◐</span></button></nav></header>
+<main id="main">{{ block "main" . }}{{ end }}</main>
+<footer class="footer wrap"><span>© {{ now.Year }} Mustafa Saber</span><nav aria-label="Social links"><a href="{{ site.Params.github }}">GitHub</a><a href="{{ site.Params.linkedin }}">LinkedIn</a><a href="{{ "index.xml" | relURL }}">RSS</a></nav></footer>
+<script src="{{ "theme.js" | relURL }}" defer></script>
+</body></html>

@@ -1,0 +1,5 @@
+{{- with resources.Get "branding/arabic-wordmark.svg" -}}
+<span class="arabic-wordmark" role="img" aria-label="مصطفى صابر">{{ .Content | safeHTML }}</span>
+{{- else -}}
+<span class="arabic-wordmark" lang="ar" dir="rtl">مصطفى صابر</span>
+{{- end -}}
